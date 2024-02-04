@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Bulbasaur",
+    "type1": "grass",
+    "type2": "poison",
+    "evolveFrom": null,
+    "evolveTo": "Ivysaur"
+  },
+  {
+    "name": "Ivysaur",
+    "type1": "grass",
+    "type2": "poison",
+    "evolveFrom": "Bulbasaur",
+    "evolveTo": "Venusaur"
+  },
+  {
+    "name": "Venusaur",
+    "type1": "grass",
+    "type2": "poison",
+    "evolveFrom": "Ivysaur",
+    "evolveTo": null
+  }
+]

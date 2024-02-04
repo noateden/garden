@@ -1,0 +1,36 @@
+{
+  "name": "noateden-garden",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "pretty": "prettier --write ./src next.config.js postcss.config.js tailwind.config.js"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.16",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.17",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.14",
+    "gray-matter": "^4.0.3",
+    "headlessui": "^0.0.0",
+    "moment": "^2.29.4",
+    "next": "^14.1.0",
+    "postcss": "8.4.27",
+    "prettier": "^3.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rehype-raw": "^6.1.1",
+    "rehype-stringify": "^9.0.3",
+    "remark": "^14.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-html": "^15.0.2",
+    "remark-rehype": "^10.1.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6",
+    "unified": "^10.1.2"
+  }
+}
