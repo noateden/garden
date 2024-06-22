@@ -20,7 +20,7 @@ export default function WritingsPage({ allPostsData }: BlogProps) {
         I wrote about everything I have learned, almost all of them are about computer kind of stuff.
       </div>
 
-      <div className="my-10 border border-dashed border-gray-100"></div>
+      <div className="my-5 border border-dashed border-gray-100"></div>
 
       <div className="mt-5 flex justify-start">
         <div className="grid grid-cols-1 w-full">

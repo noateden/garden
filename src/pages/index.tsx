@@ -5,11 +5,19 @@ export default function Home() {
         Hi, I'm Eden and welcome to my garden. I'm a software engineer and learning things. I share everything I have
         learned in my journey here!
       </div>
+      <div className="flex justify-start">I have passions in Linux, operating systems and blockchain technology.</div>
       <div className="mt-5 flex justify-start">
-        I have passions in Linux, operating systems and blockchain technology.
+        Find me on{' '}
+        <a className="ml-2 underline" href="https://github.com/noateden">
+          Github
+        </a>
+        ,{' '}
+        <a className="ml-2 underline" href="https://x.com/noateden">
+          X (Twitter)
+        </a>
       </div>
 
-      <div className="my-10 border border-dashed border-gray-100"></div>
+      <div className="my-5 border border-dashed border-gray-100"></div>
 
       <div className="flex justify-start">
         <p className="text-xl font-semibold text-foreground">My Favorites</p>

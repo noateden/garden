@@ -11,7 +11,7 @@ const MainFont = Ubuntu({
 export default function PageLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={MainFont.className}>
-      <div className="mx-auto max-w-3xl px-2">
+      <div className="mx-auto max-w-2xl px-5">
         <div className="mt-10 flex justify-between items-center">
           <a href="/">
             <p className="text-xl font-bold text-foreground">Eden Garden 🍃</p>
@@ -23,9 +23,6 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
             <a className="ml-5 underline" href="/writings">
               Writings
             </a>
-            <a className="ml-5 underline" href="https://github.com/noateden" target="_blank">
-              Github
-            </a>
           </div>
         </div>
         <div className="mt-2 flex justify-start">
@@ -33,7 +30,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
         </div>
       </div>
 
-      <div className="my-10 w-full mx-auto max-w-3xl px-2">{children}</div>
+      <div className="my-5 w-full mx-auto max-w-2xl px-5">{children}</div>
     </div>
   );
 }
