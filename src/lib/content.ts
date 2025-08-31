@@ -4,14 +4,21 @@ import moment from 'moment';
 import path from 'path';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
+import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
-const BLOG_POSTS_PATH = path.join(process.cwd(), 'src/content/posts');
+const CONTENT_PATH = path.join(process.cwd(), 'content');
 
-export function getAllPostIds() {
-  const fileNames = fs.readdirSync(BLOG_POSTS_PATH);
+type ContentType = 'blogs' | 'pokemon';
+const ContentPaths: Record<ContentType, string> = {
+  blogs: path.join(CONTENT_PATH, 'posts'),
+  pokemon: path.join(CONTENT_PATH, 'pokemon'),
+};
+
+export function getAllPostIds(contentType: ContentType) {
+  const fileNames = fs.readdirSync(ContentPaths[contentType]);
 
   return fileNames.map((fileName) => {
     return {
@@ -22,8 +29,8 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id: string): Promise<any> {
-  const fullPath = path.join('src/content/posts/', `${id}.md`);
+export async function getPostData(contentType: ContentType, id: string): Promise<any> {
+  const fullPath = path.join(ContentPaths[contentType], `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the post metadata section
@@ -34,6 +41,7 @@ export async function getPostData(id: string): Promise<any> {
     .use(remarkRehype, { allowDangerousHtml: true } as any)
     .use(rehypeRaw)
     .use(rehypeStringify)
+    .use(remarkGfm)
     .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
@@ -47,16 +55,16 @@ export async function getPostData(id: string): Promise<any> {
 }
 
 // credit: https://nextjs.org/learn/basics/data-fetching/implement-getstaticprops
-export function getSortedPostsData(limit?: number): Array<any> {
+export function getSortedPostsData(contentType: ContentType, limit?: number): Array<any> {
   // Get file names under /posts
-  const fileNames = fs.readdirSync(BLOG_POSTS_PATH);
+  const fileNames = fs.readdirSync(ContentPaths[contentType]);
 
   const allPostsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '');
 
     // Read markdown file as string
-    const fullPath = path.join(BLOG_POSTS_PATH, fileName);
+    const fullPath = path.join(ContentPaths[contentType], fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Use gray-matter to parse the post metadata section

@@ -4,7 +4,7 @@ import { GetStaticPathsResult } from 'next';
 
 export async function getStaticProps({ params }: { params: any }) {
   // Add the "await" keyword like this:
-  const postData = await getPostData('blogs', params.id);
+  const postData = await getPostData('pokemon', params.id);
 
   postData.date = moment(postData.date).format('MMM Do, YYYY');
 
@@ -16,7 +16,7 @@ export async function getStaticProps({ params }: { params: any }) {
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const paths = getAllPostIds('blogs');
+  const paths = getAllPostIds('pokemon');
   return {
     paths,
     fallback: false,
@@ -35,7 +35,7 @@ export default function (props: any) {
 
       <div className="my-5 border border-dashed border-gray-200"></div>
 
-      <div className="content" dangerouslySetInnerHTML={{ __html: props.postData.contentHtml }} />
+      <div className="content pokemon" dangerouslySetInnerHTML={{ __html: props.postData.contentHtml }} />
     </>
   );
 }

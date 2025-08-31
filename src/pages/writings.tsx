@@ -1,11 +1,11 @@
-import { getSortedPostsData } from '@/lib/posts';
+import { getSortedPostsData } from '@/lib/content';
 
 interface BlogProps {
   allPostsData: Array<any>;
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = getSortedPostsData('blogs');
   return {
     props: {
       allPostsData,
@@ -13,7 +13,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function WritingsPage({ allPostsData }: BlogProps) {
+export default function ({ allPostsData }: BlogProps) {
   return (
     <>
       <div className="flex justify-start">

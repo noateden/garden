@@ -20,15 +20,14 @@ I really don't like to talk about theory here. In my thought, the state machine 
 Let's talk about my sample application above, It has two states idle and working. It transforms from the idle state to the working state only when it receives events from the sensor and it transforms from the working state to the idle state only when it has already sent notifications to my phone.
 
 ```
-+------------------+                   +--------------+
-|       Idle       | ----------------> |   Working    |
-|                  | receives events   |              |
-| Listening events | from the sensor   | Send noties  |
-| from the sensor  | <-------|         | to my phone  | -|
-+------------------+         |         +--------------+  |
-                             |                           |
-		                     |---------------------------|
-						           sent notification
+                        receives events
++------------------+    from the sensor       +--------------+
+|       Idle       | -----------------------> |   Working    |
+|                  |                          |              |
+| Listening events |                          | Send noties  |
+| from the sensor  | <----------------------- | to my phone  |
++------------------+     sent notifications   +--------------+
+						           
 ```
 
 # In software development

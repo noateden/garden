@@ -44,3 +44,13 @@ body {
 .content ul {
   @apply list-disc ml-5 mt-5;
 }
+
+.content,
+.pokemon table tbody td img {
+  @apply w-12 h-12;
+}
+
+.content,
+.pokemon table {
+  @apply w-full;
+}
