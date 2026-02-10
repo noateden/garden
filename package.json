@@ -20,7 +20,7 @@
     "gray-matter": "^4.0.3",
     "headlessui": "^0.0.0",
     "moment": "^2.29.4",
-    "next": "^14.1.0",
+    "next": "14.2.35",
     "package": "^1.0.1",
     "postcss": "8.4.27",
     "prettier": "^3.0.0",
