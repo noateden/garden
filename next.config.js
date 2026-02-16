@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   distDir: 'docs',
+  trailingSlash: true,
   reactStrictMode: true,
 };
 
