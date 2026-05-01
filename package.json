@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch docs/.nojekyll",
+    "build": "next build",
     "start": "next start",
     "serve": "npx http-server docs",
     "pretty": "prettier --write ./src next.config.js postcss.config.js tailwind.config.js"
