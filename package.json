@@ -1,11 +1,12 @@
 {
-  "name": "noateden-garden",
+  "name": "garden",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build && touch docs/.nojekyll",
     "start": "next start",
+    "serve": "npx http-server docs",
     "pretty": "prettier --write ./src next.config.js postcss.config.js tailwind.config.js"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "autoprefixer": "10.4.14",
     "gray-matter": "^4.0.3",
     "headlessui": "^0.0.0",
+    "http-server": "^14.1.1",
     "moment": "^2.29.4",
     "next": "14.2.35",
     "package": "^1.0.1",
@@ -31,6 +33,7 @@
     "remark": "^14.0.3",
     "remark-gfm": "3.0.0",
     "remark-html": "^15.0.2",
+    "remark-parse": "^10.0.0",
     "remark-rehype": "^10.1.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
